@@ -30,8 +30,8 @@ Should catch error as there is invalid format in the VALUE_NAME list.
 
 #### Invalid Input Test
 Run as such with inputfile that doesnt not exist<br>
-./cmdcalculator input
-Result: Should cause assert error.
+./cmdcalculator input<br>
+Should cause assert error.
 
 
 
