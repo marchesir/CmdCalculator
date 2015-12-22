@@ -1,4 +1,3 @@
 restpower=10
-activepower=50
 peakpower=90
 average (restpower, activepower)
