@@ -1,0 +1,4 @@
+restpower=10
+activepower=50xx
+peakpower=90
+average (restpower, activepower, peakpower)
