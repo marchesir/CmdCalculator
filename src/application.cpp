@@ -2,6 +2,12 @@
 #include "dataprocessor.h"
 #include <fstream>
 
+#define TESTING
+
+#ifdef TESTING
+#include <assert.h>
+#endif
+
 // Public methods.
 
 // Singleton Pattern access.
@@ -23,22 +29,41 @@ int Application::run(const std::string& filename)
 
     try
     {
-        // 1. Process input file.
-        while (inputfile.is_open() && std::getline(inputfile, readline) )
+        if (inputfile.is_open())
         {
-            if (!dp->parseDataValue(readline))
+            // 1. Process input file.
+            while (std::getline(inputfile, readline) )
             {
-                if(!dp->parseDataCmd(readline))
+                if (!dp->parseDataValue(readline))
                 {
-                    std::cout << "<-- Application::run [ERROR: unable to process fileline <<" << readline << ">>]" << std::endl;
+                    if(!dp->parseDataCmd(readline))
+                    {
+                        #ifdef TESTING
+                            assert(false);
+                        #else
+                            std::cout << "<-- Application::run [ERROR: unable to process fileline <<" << readline << ">>]" << std::endl;
+                        #endif
+                    }
                 }
             }
+            inputfile.close();
         }
-        inputfile.close();
+        else
+        {
+            #ifdef TESTING
+                assert(false);
+            #else
+               std::cout << "<-- Application::run [ERROR: unable to open fileline <<" << inputfile << ">>]" << std::endl;
+            #endif
+        }
     }
     catch(...)
     {
-        std::cout << "<-- Application::run [ERROR: problem opening inputfile]" << std::endl;
+        #ifdef TESTING
+            assert(false);
+        #else
+            std::cout << "<-- Application::run [ERROR: problem opening inputfile]" << std::endl;
+        #endif
         inputfile.close();
     }
 
