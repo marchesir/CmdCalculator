@@ -19,6 +19,19 @@ g++ -std=c++0x -o cmdcalculator cmdcalculator.cpp application.cpp dataprocessor.
 # Tests
 Tests follows basic TDD (Test Driven Design):<br>
 The cmdcalculator must be run with a serious of test inputfiles, contained in the src folder<br>
+Also the #define TESTING must be enabled which will enable assert calls<br>
+
+#### test1_input.data
+Should catch error as there is a missing VALUE_NAME/VALUE.
+#### test2_input.data
+Should catch error as there is invalid integer value.
+#### test3_input.data
+Should catch error as there is invalid format in the VALUE_NAME list.
+
+#### Invalid Input Test
+Run as such with inputfile that doesnt not exist<br>
+./cmdcalculator input
+Result: Should cause assert error.
 
 
 
