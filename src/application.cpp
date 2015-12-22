@@ -5,7 +5,7 @@
 #define TESTING
 
 #ifdef TESTING
-#include <assert.h>
+//#include <assert.h>
 #endif
 
 // Public methods.
