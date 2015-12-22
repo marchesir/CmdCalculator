@@ -1,8 +1,8 @@
-# cmdCalculator
+# CmdCalculator
 Read from a text file line by line. Each line can either assign a value:<br>
-<VALUE_NAME> = <INTEGER><br>
+```<VALUE_NAME> = <INTEGER>```<br>
 Or it can be a command to calculate the mean average of any previously defined values:<br>
-average (<VALUE_NAME1>, <VALUE_NAME2,…)<br>
+average ```(<VALUE_NAME1>, <VALUE_NAME2,…)```<br>
 Your program should write the results of these average commands to the standard output.<br>
 So for example, your program should be able to read in the following file:<br>
 restpower=10<br>
