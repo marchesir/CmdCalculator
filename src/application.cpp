@@ -20,8 +20,8 @@ Application& Application::getInstance()
 // Program event loop.
 int Application::run(const std::string& filename)
 {
-    std::cout << "<-- Application::run [CmdCalculator START]" << std::endl;
-    std::cout << "<-- Application::run [CmdCalculator: processing" << filename << "]" << std::endl;
+    std::cout << "<-- Application::run [pecalculator START]" << std::endl;
+    std::cout << "<-- Application::run [pecalculator: processing" << filename << "]" << std::endl;
 
     std::ifstream inputfile(filename, std::ios::in);
     DataProcessor* dp = new DataProcessor();
@@ -73,7 +73,7 @@ int Application::run(const std::string& filename)
         delete dp;
     }
 
-    std::cout << "<-- Application::run [CmdCalculator END]" << std::endl;
+    std::cout << "<-- Application::run [pecalculator END]" << std::endl;
 
     return 0;
 }
@@ -102,5 +102,5 @@ bool Application::parseCmdLine(int argc, char* argv[], std::string& filename)
 // Print to std console usage message.
 void Application::printUsage()
 {
-    std::cout << "<-- Application::printUsage [CmdCalculator filename {where filename is input filename}]" << std::endl;
+    std::cout << "<-- Application::printUsage [pecalculator filename {where filename is input filename}]" << std::endl;
 }
